@@ -3,7 +3,7 @@ import random
 
 class DatasetPreprocessing:
 
-    def __init__(self, filename: str):
+    def __init__(self, filename: str, block_size: int = 3):
         self.X_train = None
         self.Y_train = None
         self.X_dev = None
@@ -13,7 +13,7 @@ class DatasetPreprocessing:
         self.itos = None
         self.stoi = None
         self.words = None
-        self.block_size = 3
+        self.block_size = block_size
 
         self.load_file(filename)
         self.separate_for_training()
